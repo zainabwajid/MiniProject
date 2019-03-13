@@ -6,3 +6,12 @@ C:\Users\Bushra\Documents\Visual Studio 2015\Projects\ProjectB\ProjectB\obj\Debu
 C:\Users\Bushra\Documents\Visual Studio 2015\Projects\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.GenerateResource.Cache
 C:\Users\Bushra\Documents\Visual Studio 2015\Projects\ProjectB\ProjectB\obj\Debug\ProjectB.exe
 C:\Users\Bushra\Documents\Visual Studio 2015\Projects\ProjectB\ProjectB\obj\Debug\ProjectB.pdb
+C:\Users\Bushra\Documents\Visual Studio 2015\Projects\ProjectB\MiniProject\ProjectB\bin\Debug\ProjectB.exe.config
+C:\Users\Bushra\Documents\Visual Studio 2015\Projects\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.exe
+C:\Users\Bushra\Documents\Visual Studio 2015\Projects\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.pdb
+C:\Users\Bushra\Documents\Visual Studio 2015\Projects\ProjectB\MiniProject\ProjectB\bin\Debug\ProjectB.exe
+C:\Users\Bushra\Documents\Visual Studio 2015\Projects\ProjectB\MiniProject\ProjectB\bin\Debug\ProjectB.pdb
+C:\Users\Bushra\Documents\Visual Studio 2015\Projects\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.csprojResolveAssemblyReference.cache
+C:\Users\Bushra\Documents\Visual Studio 2015\Projects\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.Form1.resources
+C:\Users\Bushra\Documents\Visual Studio 2015\Projects\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.Properties.Resources.resources
+C:\Users\Bushra\Documents\Visual Studio 2015\Projects\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.csproj.GenerateResource.Cache
