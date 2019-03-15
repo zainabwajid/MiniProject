@@ -15,3 +15,17 @@ C:\Users\Bushra\Documents\Visual Studio 2015\Projects\ProjectB\MiniProject\Proje
 C:\Users\Bushra\Documents\Visual Studio 2015\Projects\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.Form1.resources
 C:\Users\Bushra\Documents\Visual Studio 2015\Projects\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.Properties.Resources.resources
 C:\Users\Bushra\Documents\Visual Studio 2015\Projects\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.csproj.GenerateResource.Cache
+C:\Users\Bushra\Documents\Visual Studio 2015\Projects\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.Clo.resources
+C:\Users\Bushra\Documents\Visual Studio 2015\Projects\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.Rubrics.resources
+C:\Users\Bushra\Desktop\ProjectB\MiniProject\ProjectB\bin\Debug\ProjectB.exe.config
+C:\Users\Bushra\Desktop\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.exe
+C:\Users\Bushra\Desktop\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.pdb
+C:\Users\Bushra\Desktop\ProjectB\MiniProject\ProjectB\bin\Debug\ProjectB.exe
+C:\Users\Bushra\Desktop\ProjectB\MiniProject\ProjectB\bin\Debug\ProjectB.pdb
+C:\Users\Bushra\Desktop\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.csprojResolveAssemblyReference.cache
+C:\Users\Bushra\Desktop\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.Properties.Resources.resources
+C:\Users\Bushra\Desktop\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.csproj.GenerateResource.Cache
+C:\Users\Bushra\Desktop\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.frmCloManagement.resources
+C:\Users\Bushra\Desktop\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.frmStudentManagement.resources
+C:\Users\Bushra\Desktop\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.frmRubricsManagement.resources
+C:\Users\Bushra\Desktop\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.frmLabManagement.resources

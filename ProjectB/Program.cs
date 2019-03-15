@@ -16,7 +16,11 @@ namespace ProjectB
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmLabManagement());
+         // Application.Run(new StudentManagement());
+          //Application.Run(new CloManagement());
+          //Application.Run(new RubricsManagement());
+
         }
     }
 }
