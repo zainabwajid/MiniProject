@@ -31,6 +31,12 @@ namespace ProjectB
 
         }
 
+        /// <summary>
+        /// This function is for adding Rubrics data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void btnadd_Click(object sender, EventArgs e)
         {
             if (txtID.Text != "" && richTextBox1.Text != "" && cmbClo.Text != "")
@@ -56,6 +62,11 @@ namespace ProjectB
             }
         }
 
+
+        /// <summary>
+        /// This function is to clear textboxes after Rubrics data is added
+        /// </summary>
+
         public void ClearTextbox()
 
         {
@@ -64,6 +75,14 @@ namespace ProjectB
 
 
         }
+
+
+        /// <summary>
+        /// This function is for displaying data in dataGridView
+        /// </summary>
+
+
+
         public void DisplayData()
         {
             con.Open();
@@ -78,6 +97,14 @@ namespace ProjectB
             con.Close();
         }
 
+
+        /// <summary>
+        /// This function is for displaying data in textboxes for updation or deletion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+
         private void dgvRubrics_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             btndelete.Show();
@@ -88,6 +115,14 @@ namespace ProjectB
             cmbClo.Text = dgvRubrics.Rows[e.RowIndex].Cells[2].Value.ToString();
             btnadd.Hide();
         }
+
+
+        /// <summary>
+        /// This function is for updating Rubrics data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
 
         private void btnupdate_Click(object sender, EventArgs e)
         {
@@ -106,7 +141,7 @@ namespace ProjectB
                 con.Close();
                 DisplayData();
                 ClearTextbox();
-                MessageBox.Show("Data Saved Successfully!");
+                MessageBox.Show("Data Updated Successfully!");
                 btnupdate.Hide();
                 btndelete.Hide();
                 btnadd.Show();
@@ -118,6 +153,16 @@ namespace ProjectB
 
             }
         }
+
+
+
+        /// <summary>
+        /// This function is for deleting Rubrics's data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// 
+
 
         private void btndelete_Click(object sender, EventArgs e)
         {
@@ -145,6 +190,12 @@ namespace ProjectB
 
             }
         }
+
+        /// <summary>
+        /// This function is to go to main page via linklabel 'Home'
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

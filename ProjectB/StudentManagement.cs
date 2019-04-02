@@ -14,12 +14,25 @@ namespace ProjectB
 {
     public partial class frmStudentManagement : Form
     {
+        /// <summary>
+        /// SQL Connection
+        /// </summary>
+        /// 
+
+
         SqlConnection con = new SqlConnection("Data Source = (local);Initial Catalog = ProjectB; Integrated Security = True;MultipleActiveResultSets = True");
         int ID = 0;
         public frmStudentManagement()
         {
             InitializeComponent();
         }
+
+        
+        /// <summary>
+        /// This function executes when the Student form is loaded
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -29,20 +42,12 @@ namespace ProjectB
             DisplayData();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
+        /// <summary>
+        /// This function is for adding Student data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -73,6 +78,10 @@ namespace ProjectB
 
         }
 
+        /// <summary>
+        /// This function is to clear textboxes after Student's data is added
+        /// </summary>
+
         public void ClearTextbox()
 
         {
@@ -84,6 +93,12 @@ namespace ProjectB
             txtRegisteration.Text = "";
             cmbStatus.Text = "";
         }
+
+
+        /// <summary>
+        /// This function is for displaying data in dataGridView
+        /// </summary>
+  
         public void DisplayData()
         {
             con.Open();
@@ -98,29 +113,39 @@ namespace ProjectB
             con.Close();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        /// <summary>
+        /// This function is for displaying data in textboxes for updation or deletion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
+
+
+        private void dgvStudent_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            btndelete.Show();
+            btnupdate.Show();
+            ID = Convert.ToInt32(dgvStudent.Rows[e.RowIndex].Cells[0].Value.ToString());
+            txtFirstName.Text = dgvStudent.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtLastName.Text = dgvStudent.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtContact.Text = dgvStudent.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtEmail.Text = dgvStudent.Rows[e.RowIndex].Cells[4].Value.ToString();
+            txtRegisteration.Text = dgvStudent.Rows[e.RowIndex].Cells[5].Value.ToString();
+            cmbStatus.Text = dgvStudent.Rows[e.RowIndex].Cells[6].Value.ToString();
+            btnadd.Hide();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            if (Regex.IsMatch(txtLastName.Text, @"^[A-Z][a-zA-Z]*$"))
-            {
-                errorProvider2.Clear();
 
-            }
-            else
-            {
-                errorProvider2.SetError(txtLastName, "Only use alphabets & Use first letter Capital");
-                return;
-            }
+        /// <summary>
+        /// This function is for updating Student's data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if ( ValidData() && txtFirstName.Text != "" && txtLastName.Text != "" && txtContact.Text != "" && txtContact.Text != "" && txtEmail.Text != "" && txtRegisteration.Text != "" && cmbStatus.Text != "")
+            if (ValidData() && txtFirstName.Text != "" && txtLastName.Text != "" && txtContact.Text != "" && txtContact.Text != "" && txtEmail.Text != "" && txtRegisteration.Text != "" && cmbStatus.Text != "")
             {
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
@@ -137,7 +162,7 @@ namespace ProjectB
                 con.Close();
                 DisplayData();
                 ClearTextbox();
-                MessageBox.Show("Data Saved Successfully!");
+                MessageBox.Show("Data Updated Successfully!");
                 btnupdate.Hide();
                 btndelete.Hide();
                 btnadd.Show();
@@ -150,6 +175,71 @@ namespace ProjectB
 
 
         }
+
+
+        /// <summary>
+        /// This function is for deleting Student's data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (txtFirstName.Text != "" && txtLastName.Text != "" && txtContact.Text != "" && txtContact.Text != "" && txtEmail.Text != "" && txtRegisteration.Text != "" && cmbStatus.Text != "")
+            {
+
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "delete from student where ID=@id";
+                cmd.Parameters.AddWithValue("@id", ID);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                DisplayData();
+                ClearTextbox();
+                MessageBox.Show("Data Deleted Successfully!");
+                btnadd.Show();
+                btndelete.Hide();
+                btnupdate.Hide();
+            }
+            else
+            {
+
+                MessageBox.Show("Enter the valid data in Text box");
+            }
+        }
+
+
+        /// <summary>
+        /// This function automatically fills comboBox with Category/Status value from Lookup table
+        /// </summary>
+
+        public void AutoFillComboBox()
+        {
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select Name from Lookup where Category = 'STUDENT_STATUS'";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            cmbStatus.DisplayMember = "Name";
+            cmbStatus.DataSource = dt;
+            con.Close();
+
+        }
+
+
+
+        /// <summary>
+        /// This function is to retrieve LookupID against status value 'Active' or 'InActive
+        /// </summary>
+        /// <param name="v"></param>
+        /// <returns></returns>
+
+
 
         public int ValueOfStatus(string v)
         {
@@ -175,64 +265,18 @@ namespace ProjectB
         }
 
 
-        public void AutoFillComboBox() {
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Name from Lookup where Category = 'STUDENT_STATUS'";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            cmbStatus.DisplayMember = "Name";
-            cmbStatus.DataSource = dt;
-            con.Close();
 
-        }
+
+
         /// <summary>
-        /// 
+        /// This is validation function for FirstName
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        private void dgvStudent_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            btndelete.Show();
-            btnupdate.Show();
-            ID = Convert.ToInt32(dgvStudent.Rows[e.RowIndex].Cells[0].Value.ToString());
-            txtFirstName.Text = dgvStudent.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtLastName.Text = dgvStudent.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtContact.Text = dgvStudent.Rows[e.RowIndex].Cells[3].Value.ToString();
-            txtEmail.Text = dgvStudent.Rows[e.RowIndex].Cells[4].Value.ToString();
-            txtRegisteration.Text = dgvStudent.Rows[e.RowIndex].Cells[5].Value.ToString();
-            cmbStatus.Text = dgvStudent.Rows[e.RowIndex].Cells[6].Value.ToString();
-            btnadd.Hide();
-        }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if ( txtFirstName.Text != "" && txtLastName.Text != "" && txtContact.Text != "" && txtContact.Text != "" && txtEmail.Text != "" && txtRegisteration.Text != "" && cmbStatus.Text != "")
-            {
 
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "delete from student where ID=@id";
-                cmd.Parameters.AddWithValue("@id", ID);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                DisplayData();
-                ClearTextbox();
-                MessageBox.Show("Data Deleted Successfully!");
-                btnadd.Show();
-                btndelete.Hide();
-                btnupdate.Hide();
-            }
-            else {
 
-                MessageBox.Show("Enter the valid data in Text box");
-            }
-        }
 
         private void txtFirstName_TextChanged(object sender, EventArgs e)
         {
@@ -249,6 +293,39 @@ namespace ProjectB
 
         }
 
+        /// <summary>
+        /// This is validation function for LastName 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (Regex.IsMatch(txtLastName.Text, @"^[A-Z][a-zA-Z]*$"))
+            {
+                errorProvider2.Clear();
+
+            }
+            else
+            {
+                errorProvider2.SetError(txtLastName, "Only use alphabets & Use first letter Capital");
+                return;
+            }
+
+        }
+
+
+
+        /// <summary>
+        /// This is validation function for Contact
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+
+
         private void txtContact_TextChanged(object sender, EventArgs e)
         {
             if (Regex.IsMatch(txtContact.Text, @"^(\+)?([9]{1}[2]{1})?-? ?(\()?([0]{1})?[1-9]{2,4}(\))?-? ??(\()?[1-9]{4,7}(\))?$"))
@@ -262,6 +339,16 @@ namespace ProjectB
                 return;
             }
         }
+
+
+        /// <summary>
+        /// This is validation function for Email
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+         
+
+
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
@@ -279,6 +366,16 @@ namespace ProjectB
             }
         }
 
+
+
+        /// <summary>
+        /// This is validation function for Registeration Number
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+
+
         private void txtRegisteration_TextChanged(object sender, EventArgs e)
         {
             if (Regex.IsMatch(txtRegisteration.Text, @"^(\d{4}-[A-Z|a-z]{2}-\d{1,4})?$"))
@@ -293,6 +390,12 @@ namespace ProjectB
 
             }
         }
+
+
+        /// <summary>
+        /// This function checks foreach errorProvider if the data is valid or not
+        /// </summary>
+        /// <returns>bool</returns>
 
         public bool ValidData()
         {
@@ -324,11 +427,31 @@ namespace ProjectB
             return true;
         }
 
+
+        
+
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmLabManagement lm = new frmLabManagement();
             this.Hide();
             lm.Show();
         }
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
     }
 }

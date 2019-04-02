@@ -29,6 +29,15 @@ namespace ProjectB
 
         }
 
+
+        /// <summary>
+        /// This function is for adding CLOs 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+
+
         private void btnadd_Click(object sender, EventArgs e)
         {
             if ( txtName.Text != "" )
@@ -54,12 +63,26 @@ namespace ProjectB
             }
         }
 
+
+        /// <summary>
+        /// This function is to clear textboxes after CLOs data is added
+        /// </summary>
+
+
+
         public void ClearTextbox()
 
         {
             txtName.Text = "";
             
         }
+
+
+        /// <summary>
+        /// This function is for displaying data in dataGridView
+        /// </summary>
+
+
         public void DisplayData()
         {
             con.Open();
@@ -73,6 +96,31 @@ namespace ProjectB
             dgvClo.DataSource = dt;
             con.Close();
         }
+
+        /// <summary>
+        /// This function is for displaying data in textboxes for updation or deletion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+
+
+        private void dgvClo_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            btnupdate.Show();
+            btndelete.Show();
+            ID = Convert.ToInt32(dgvClo.Rows[e.RowIndex].Cells[0].Value.ToString());
+            txtName.Text = dgvClo.Rows[e.RowIndex].Cells[1].Value.ToString();
+            btnadd.Hide();
+        }
+
+
+
+        /// <summary>
+        /// This function is for updating CLOs data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void btnupdate_Click(object sender, EventArgs e)
         {
@@ -105,14 +153,13 @@ namespace ProjectB
             }
         }
 
-        private void dgvClo_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            btnupdate.Show();
-            btndelete.Show();
-            ID = Convert.ToInt32(dgvClo.Rows[e.RowIndex].Cells[0].Value.ToString());
-            txtName.Text = dgvClo.Rows[e.RowIndex].Cells[1].Value.ToString();
-            btnadd.Hide();
-        }
+
+        /// <summary>
+        /// This function is for deleting CLOs data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
 
         private void btndelete_Click(object sender, EventArgs e)
         {
@@ -144,6 +191,12 @@ namespace ProjectB
             }
 
         }
+
+        /// <summary>
+        /// This function is to go to main page via linklabel 'Home'
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

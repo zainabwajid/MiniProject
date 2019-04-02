@@ -46,17 +46,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assessments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assessments.Designer.cs">
+      <DependentUpon>Assessments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Attendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Attendance.Designer.cs">
+      <DependentUpon>Attendance.cs</DependentUpon>
+    </Compile>
     <Compile Include="CloManagement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CloManagement.Designer.cs">
       <DependentUpon>CloManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Evaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Evaluation.Designer.cs">
+      <DependentUpon>Evaluation.cs</DependentUpon>
+    </Compile>
     <Compile Include="LabManagementProject.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LabManagementProject.Designer.cs">
       <DependentUpon>LabManagementProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectBDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectBDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectBDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectBDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RubricLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RubricLevel.Designer.cs">
+      <DependentUpon>RubricLevel.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentManagement.cs">
       <SubType>Form</SubType>
@@ -92,11 +126,23 @@
     <Compile Include="RubricsManagement.Designer.cs">
       <DependentUpon>RubricsManagement.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Assessments.resx">
+      <DependentUpon>Assessments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Attendance.resx">
+      <DependentUpon>Attendance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CloManagement.resx">
       <DependentUpon>CloManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Evaluation.resx">
+      <DependentUpon>Evaluation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LabManagementProject.resx">
       <DependentUpon>LabManagementProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RubricLevel.resx">
+      <DependentUpon>RubricLevel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentManagement.resx">
       <DependentUpon>StudentManagement.cs</DependentUpon>
@@ -156,6 +202,28 @@
     </None>
     <None Include="ProjectBDataSet3.xss">
       <DependentUpon>ProjectBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectBDataSet4.xsc">
+      <DependentUpon>ProjectBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectBDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectBDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectBDataSet4.xss">
+      <DependentUpon>ProjectBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectBDataSet5.xsc">
+      <DependentUpon>ProjectBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectBDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectBDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectBDataSet5.xss">
+      <DependentUpon>ProjectBDataSet5.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

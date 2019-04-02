@@ -29,3 +29,7 @@ C:\Users\Bushra\Desktop\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.frmCloM
 C:\Users\Bushra\Desktop\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.frmStudentManagement.resources
 C:\Users\Bushra\Desktop\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.frmRubricsManagement.resources
 C:\Users\Bushra\Desktop\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.frmLabManagement.resources
+C:\Users\Bushra\Desktop\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.frmAssessments.resources
+C:\Users\Bushra\Desktop\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.frmEvaluation.resources
+C:\Users\Bushra\Desktop\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.frmRubricLevel.resources
+C:\Users\Bushra\Desktop\ProjectB\MiniProject\ProjectB\obj\Debug\ProjectB.frmAttendance.resources

@@ -35,6 +35,7 @@
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -47,6 +48,7 @@
             this.label1.Size = new System.Drawing.Size(421, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Lab Management Project";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // linkLabel1
             // 
@@ -90,6 +92,7 @@
             this.linkLabel4.TabIndex = 4;
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "Manage Assessments ";
+            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
             // 
             // linkLabel5
             // 
@@ -100,6 +103,7 @@
             this.linkLabel5.TabIndex = 5;
             this.linkLabel5.TabStop = true;
             this.linkLabel5.Text = "Manage Rubric Levels ";
+            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
             // 
             // linkLabel6
             // 
@@ -110,12 +114,25 @@
             this.linkLabel6.TabIndex = 6;
             this.linkLabel6.TabStop = true;
             this.linkLabel6.Text = "Mark Evaluations";
+            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
+            // 
+            // linkLabel7
+            // 
+            this.linkLabel7.AutoSize = true;
+            this.linkLabel7.Location = new System.Drawing.Point(44, 293);
+            this.linkLabel7.Name = "linkLabel7";
+            this.linkLabel7.Size = new System.Drawing.Size(89, 13);
+            this.linkLabel7.TabIndex = 7;
+            this.linkLabel7.TabStop = true;
+            this.linkLabel7.Text = "Mark Attendance";
+            this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
             // 
             // frmLabManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(959, 331);
+            this.Controls.Add(this.linkLabel7);
             this.Controls.Add(this.linkLabel6);
             this.Controls.Add(this.linkLabel5);
             this.Controls.Add(this.linkLabel4);
@@ -125,6 +142,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmLabManagement";
             this.Text = "LabManagementProject";
+            this.Load += new System.EventHandler(this.frmLabManagement_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +157,6 @@
         private System.Windows.Forms.LinkLabel linkLabel4;
         private System.Windows.Forms.LinkLabel linkLabel5;
         private System.Windows.Forms.LinkLabel linkLabel6;
+        private System.Windows.Forms.LinkLabel linkLabel7;
     }
 }

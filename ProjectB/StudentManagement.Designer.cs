@@ -1,4 +1,7 @@
-﻿namespace ProjectB
+﻿using System;
+using System.Windows.Forms;
+
+namespace ProjectB
 {
     partial class frmStudentManagement
     {
@@ -294,6 +297,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
