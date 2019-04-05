@@ -20,8 +20,9 @@ namespace ProjectB
             // Application.Run(new frmStudentManagement());
             //Application.Run(new frmCloManagement());
             //Application.Run(new frmRubricsManagement());
-           // Application.Run(new frmAssessments());
-           // Application.Run(new frmAttendance());
+            // Application.Run(new frmAssessments());
+            // Application.Run(new frmAttendance());
+            //   Application.Run(new frmRubricLevel());
 
         }
     }

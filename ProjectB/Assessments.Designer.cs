@@ -123,10 +123,10 @@
             this.totalMarksDataGridViewTextBoxColumn,
             this.totalWeightageDataGridViewTextBoxColumn});
             this.dgvAssessment.DataSource = this.assessmentBindingSource;
-            this.dgvAssessment.Location = new System.Drawing.Point(330, 21);
+            this.dgvAssessment.Location = new System.Drawing.Point(346, 21);
             this.dgvAssessment.Name = "dgvAssessment";
             this.dgvAssessment.ReadOnly = true;
-            this.dgvAssessment.Size = new System.Drawing.Size(388, 150);
+            this.dgvAssessment.Size = new System.Drawing.Size(444, 150);
             this.dgvAssessment.TabIndex = 7;
             this.dgvAssessment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgvAssessment.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvassessment_RowHeaderMouseClick);

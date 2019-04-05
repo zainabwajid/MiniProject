@@ -16,5 +16,12 @@ namespace ProjectB
         {
             InitializeComponent();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmLabManagement lm = new frmLabManagement();
+            this.Hide();
+            lm.Show();
+        }
     }
 }

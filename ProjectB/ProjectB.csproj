@@ -86,6 +86,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProjectBDataSet5.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ProjectBDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectBDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectBDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectBDataSet7.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RubricLevel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +234,28 @@
     </None>
     <None Include="ProjectBDataSet5.xss">
       <DependentUpon>ProjectBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectBDataSet6.xsc">
+      <DependentUpon>ProjectBDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectBDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectBDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectBDataSet6.xss">
+      <DependentUpon>ProjectBDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectBDataSet7.xsc">
+      <DependentUpon>ProjectBDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectBDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectBDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectBDataSet7.xss">
+      <DependentUpon>ProjectBDataSet7.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
